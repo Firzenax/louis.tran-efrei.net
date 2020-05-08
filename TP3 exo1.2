@@ -1,0 +1,78 @@
+package exercice_entrainement_2;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+
+public class Demo 
+{
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		List<String> Villes = new ArrayList<>();
+		Villes.add("Paris");
+		Villes.add("Ain");
+		Villes.add("Lille");
+		Villes.add("Montpellier");
+		Villes.add("Lyon");
+		Villes.add("Laval");
+		Villes.add("Marseille");
+		// Menu pour faire apparaitre ce qui est désiré
+		System.out.println("Que voulez vous faire :");
+		System.out.println("   1. Afficher les villes commencant par L");
+		System.out.println("   2. Afficher les villes se terminant par e");
+		System.out.println("   3. Afficher toutes les villes");
+		System.out.println("   4. Afficher aucune ville");
+		System.out.println("   5. Afficher toutes les villes avec plus de 3 lettres");
+		System.out.println("   6. Afficher toutes les villes avec 5 lettres et commencant par L");
+		int choix = sc.nextInt();
+		
+		switch(choix)
+		{
+		case 1:
+		{
+			List<String> resultat = Villes.stream()
+					.filter(ville -> ville.startsWith("L"))
+					.collect(Collectors.toList());
+			System.out.println(resultat);
+			break;
+		}
+		case 2:
+		{
+			List<String> resultat = Villes.stream()
+					.filter(ville -> ville.endsWith("e"))
+					.collect(Collectors.toList());
+			System.out.println(resultat);
+		}
+		case 3:
+		{
+			System.out.println(Villes);
+		}
+		case 4:
+		{
+			System.out.println("[]");
+		}
+		case 5:
+		{
+			List<String> resultat = Villes.stream()
+					.filter(ville -> ville.length() > 3)
+					.collect(Collectors.toList());
+			System.out.println(resultat);
+		}
+		case 6:
+		{
+			List<String> resultat = Villes.stream()
+					.filter(ville -> ville.length() == 5)
+					.filter(ville -> ville.startsWith("L"))
+					.collect(Collectors.toList());
+			System.out.println(resultat);
+		}
+		}
+		sc.close();
+
+	}
+
+}
