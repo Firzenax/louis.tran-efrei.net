@@ -1,0 +1,36 @@
+package exercice_entrainement_3;
+
+public class Demo {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		SingletonA a1 = SingletonA.instance();
+        SingletonA a2 = SingletonA.instance();
+        
+        SingletonB b1 = SingletonB.instance;
+        SingletonB b2 = SingletonB.instance;
+        
+        SingletonC c1 = SingletonC.instance();
+        SingletonC c2 = SingletonC.instance();
+        
+        SingletonD d1 = SingletonD.getInstance();
+        SingletonD d2 = SingletonD.getInstance();
+        
+        a1.setDonnee(100);
+        b1.setDonnee(200);
+        c1.setDonnee(300);
+        d1.setDonnee(400);
+        
+        System.out.println("SingletonA :a1 = "+a1+" donnee = "+a1.getDonnee());
+        System.out.println("SingletonA :a2 = "+a2+" donnee = "+a2.getDonnee());
+        System.out.println("SingletonB :b1 = "+b1+" donnee = "+b1.getDonnee());
+        System.out.println("SingletonB :b2 = "+b2+" donnee = "+b2.getDonnee());
+        System.out.println("SingletonC :c1 = "+c1+" donnee = "+c1.getDonnee());
+        System.out.println("SingletonC :c2 = "+c2+" donnee = "+c2.getDonnee());
+        System.out.println("SingletonD :d1 = "+d1+" donnee = "+d1.getDonnee());
+        System.out.println("SingletonD :d2 = "+d2+" donnee = "+d2.getDonnee());
+
+	}
+
+}
